@@ -1,0 +1,9 @@
+node_modules/
+frontend/node_modules/
+.env
+.env.*
+!*.example
+frontend/dist/
+coverage/
+test/.mongodb-binaries/
+npm-debug.log*

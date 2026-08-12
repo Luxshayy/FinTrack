@@ -1,0 +1,3 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f6f9f5; }
+button, input, select { font: inherit; }
