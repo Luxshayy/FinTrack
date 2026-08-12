@@ -1,9 +1,11 @@
 services:
+  # ================= BACKEND =================
   - type: web
-    name: fintrack
+    name: fintrack-backend
     runtime: node
     plan: free
-    buildCommand: npm ci && npm run build
+    rootDir: .
+    buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /
     envVars:
@@ -12,4 +14,12 @@ services:
       - key: MONGO_URI
         sync: false
       - key: JWT_SECRET
-        generateValue: true
+        sync: false
+
+  # ================= FRONTEND =================
+  - type: web
+    name: fintrack-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
